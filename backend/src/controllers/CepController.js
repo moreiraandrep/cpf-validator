@@ -1,5 +1,7 @@
 const Cep = require('../models/Cep');
 
+//Patern name: index, show, store, update, destroy
+
 module.exports = {
    async index (request, response) {
       const ceps = await Cep.find();
