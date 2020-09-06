@@ -15,8 +15,7 @@ module.exports = {
       let ceps = await Cep.findOne({ cep });
       
       if (!ceps) {
-         console.log(cep, logradouro, complemento, bairro, localidade, uf);
-         
+         //console.log(cep, logradouro, complemento, bairro, localidade, uf);
          //const CepArray = techs.split(',').map(tech => tech.trim());
          ceps = await Cep.create({
             cep,
