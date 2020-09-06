@@ -10,7 +10,7 @@ module.exports = {
    },
    
    async store (request, response) {
-      const { cep, logradouro, complemento, bairro, localidade, uf } = request.body
+      const { cep, logradouro, complemento, bairro, localidade, uf } = request.body;
 
       let ceps = await Cep.findOne({ cep });
       
@@ -25,8 +25,22 @@ module.exports = {
             localidade,
             uf
          });
-      }
-      
+      };
+
       return response.json(ceps);
+   },
+
+   async destroy (request, response) {
+      let { cep } = request.params;
+
+      console.log({ cep });
+
+      const deleteCep = await Cep.findOneAndDelete({ cep });
+      console.log(deleteCep);
+      //if (ceps) {
+        // ceps = await Cep.deleteOne({ cep });
+      //};
+
+      return response.json({ "message": "Delete" });
    }
 }
