@@ -5,7 +5,7 @@ const Cep = require('../models/Cep');
 module.exports = {
    async index (request, response) {
       const ceps = await Cep.find();
-   
+      
       return response.json(ceps);
    },
    
@@ -27,7 +27,7 @@ module.exports = {
             uf
          });
       }
-
+      
       return response.json(ceps);
    }
 }
